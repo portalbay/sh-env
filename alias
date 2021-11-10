@@ -1,0 +1,185 @@
+#Public Alias
+alias htmldirdl='wget --recursive --no-parent'
+alias installdeb='sudo dpkg -i'
+alias getinstalled='apt list --installed'
+alias i='sudo apt-get install -y'
+alias iu='sudo apt-get update'
+alias b='vi ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias aptsearch='sudo apt-cache search'
+alias f='firefox -new-window'
+alias fx='firefox -p'
+alias ft='firefox -new-tab'
+alias cls='clear'
+alias st='speedtest-cli'
+alias bright='xrandr --output eDP --brightness 1'
+alias dim='xrandr --output eDP --brightness .75'
+alias size='du -sh .'
+alias me='curl ifconfig.me'
+alias myip="curl ifconfig.me;echo ''"
+alias d='cd ~/Downloads'
+alias gs='gsettings list-recursively'
+alias sys='neofetch'
+alias sysinfo='neofetch'
+alias digg='dig +search'
+alias dsk='df -h | grep /dev/s'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias i='sudo apt-get install'
+alias inc='cd ~/inc'
+alias l='ls -CF'
+alias la='ls -A'
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -ltr'
+alias p='/usr/bin/python'
+alias pipi='python -m pip install'
+alias pb='vi ~/.env/alias'
+
+#view only mounted drives 
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" 
+
+#search history
+alias gh='history|grep' 
+
+#move files w/ progess bar 
+alias cpv='rsync -ah --info=progress2' 
+
+# Create a Python virtual environment 
+# apt install python3.8-venv
+alias ve='python3 -m venv ./venv' 
+alias va='source ./venv/bin/activate' 
+alias vd='deactivate'
+
+#Search directory for string
+alias search_dir_text="grep -rnw . -e "
+
+#qr code gen
+#	sudo apt-get install qrencode
+#	qrencode -s 6 -l H -o "test.png" "Example QR code"
+#	qrencode -t ansiutf8 <blue.png
+
+#Install Commands
+#	apt-get install net-tools
+#	apt -get install vim 
+
+
+#Notes on Linux
+#
+
+#Vim / Vi
+#	set number
+#	vim colorscheme
+#	https://github.com/dfxyz/CandyPaper.vim
+#	Then, add this into your ~/.vimrc:
+#   	set t_Co=256
+#    	colorscheme CandyPaper 
+#	map <F7> :tabp<cr> "previous tab
+#	map <F8> :tabn<cr> " next tab
+#	http://vim.wikia.com/wiki/Example_vimrc
+#
+#js-beautify
+#	Example of binding a function for js, html and css in visual mode on
+#	:call HtmlBeautify()
+#	For range:
+#	v - visual
+# 	Select text then hit :, then
+#	:call RangeJsBeautify()
+#  
+#Vim CandyPaper Color Scheme
+#	.vimrc
+#	set t_Co=256
+#	colorscheme CandyPaper
+#	map <F7> :tabp<cr>
+#	map <F8> :tabn<cr>
+# 
+#Vi insert text at start of line
+#	• set number
+#	• :14,20s/^/#/
+#	• \t is the tab char, :14,20s/^/\t#/
+#
+#Visual Mode (How To)
+#	• Press Esc to enter 'command mode'
+#	• Use Ctrl+V to enter visual block mode
+#	• Move Up/Downto select the columns of text in the lines you want to comment.
+#	• Then hit Shift+i and type the text you want to insert.
+#	• Then hit Esc, wait 1 second and the inserted text will appear on every line.
+#
+
+
+#Environment vars:
+#	/etc/environment
+
+# apache
+# 	sudo systemctl status apache2
+# 	sudo systemctl restart apache2
+# 	cd /etc/apache2/sites-available
+#
+
+##Convert pfx file to pem file
+#	convert a PFX file to a PEM file that contains both the certificate and private key, the following command needs to be used:
+## 	openssl pkcs12 -in filename.pfx -out cert.pem -nodes
+#	Conversion to separate PEM files
+#	We can extract the private key form a PFX to a PEM file with this command:
+##	openssl pkcs12 -in filename.pfx -nocerts -out key.pem
+#	Exporting the certificate only:
+## 	openssl pkcs12 -in filename.pfx -clcerts -nokeys -out cert.pem
+#	Removing the password from the extracted private key:
+## 	openssl rsa -in key.pem -out server.key
+#	Verify the consistency of the RSA private key and to view its modulus
+##	openssl rsa -check -noout -in myserver.key | openssl md5
+
+#User creation
+##	sudo useradd –m testuser
+##	sudo mkhomedir_helper username
+##	sudo passwd username
+#
+#LINUX FILE PERMISSIONS
+#	https://www.linux.com/training-tutorials/how-manage-file-and-folder-permissions-linux/
+#	sudo chmod -R ugo+rw /DATA/SHARE
+#
+#	chmod – change permissions
+#	chown – change ownership.
+#
+#	 sudo usermod -a -G group user
+#	 sudo usermod -a -G user group
+
+#Networking
+#	apt-get install net-tools
+## 	route
+## 	arp -a
+##	netstat -tulpn 
+## 	ssh -D 1337 -q -C -N -f user@host.me
+
+#Bootable USB
+## 	lsblk
+## 	sudo dd bs=4M if=gparted-live-1.1.0-5-amd64.iso of=/dev/sdf conv=fdatasync
+
+#How to Mount ISO File on Linux
+## 	1. Create the mount point directory on Linux: sudo mkdir /mnt/iso.
+## 	2. Mount the ISO file on Linux: sudo mount -o loop /path/to/my-iso-image.iso /mnt/iso.
+## 	3. Verify it, run: mount OR df -H OR ls -l /mnt/iso/
+## 	4. Unmount the ISO file using: sudo umount /mnt/iso/
+
+# find linux version
+##	• cat /etc/*-release
+##	• uname -a
+##	• uname -mrs
+##	• lsb_relase -a
+
+#E-mail file example..
+##	mail -s [subject] [recipient address] < [filename]
+##	mail -s test -r test@from.com test@to.com < test.txt
+##	echo "Testing" | mail -s "test sub" -a test.txt test@to.com
+##	uuencode $OUTPUTDIR/test.csv test2.csv | mailx -s "data" test@to.com
+##	uuencode $OUTPUTDIR/test.csv test2.csv | mailx -s "test File for $MONTH" test@to.com
+
+
+#git
+#       Store creds so you don't need to type in user/pass:
+##              git config credential.helper store
+#       Unset creds saved
+##              git config --unset credential.helper
+#       Save creds in home directory
+##              git config --global credential.helper store
+#               git reset --hard
