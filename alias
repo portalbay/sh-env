@@ -1,10 +1,14 @@
+
+#Environment profile settings, will need updated if not using bash.
+alias b='vi ~/.bashrc'
+alias pb='vi ~/.env/alias/alias'
+
 #Public Alias
 alias htmldirdl='wget --recursive --no-parent'
 alias installdeb='sudo dpkg -i'
 alias getinstalled='apt list --installed'
 alias i='sudo apt-get install -y'
 alias iu='sudo apt-get update'
-alias b='vi ~/.bashrc'
 alias sb='source ~/.bashrc'
 alias aptsearch='sudo apt-cache search'
 alias f='firefox -new-window'
@@ -34,7 +38,10 @@ alias ls='ls --color=auto'
 alias ll='ls --color=auto -ltr'
 alias p='/usr/bin/python'
 alias pipi='python -m pip install'
-alias pb='vi ~/.env/alias/alias'
+alias h='history'
+
+
+
 
 #view only mounted drives 
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" 
@@ -53,6 +60,8 @@ alias vd='deactivate'
 
 #Search directory for string
 alias search_dir_text="grep -rnw . -e "
+
+
 
 #qr code gen
 #	sudo apt-get install qrencode
