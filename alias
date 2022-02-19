@@ -59,6 +59,7 @@ alias lsa='ls -lah'
 alias p='/usr/bin/python'
 alias pipi='python -m pip install'
 alias h='history'
+alias updates='sudo apt update ; sudo apt upgrade -y'
 
 
 
