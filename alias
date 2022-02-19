@@ -210,3 +210,10 @@ alias search_dir_text="grep -rnw . -e "
 #       Save creds in home directory
 ##              git config --global credential.helper store
 #               git reset --hard
+
+#Fix Disk permissions
+#	sudo fdisk -l
+#	sudo blkid
+#	sudo chgrp lego /media/lego/O-ID-HERE/
+#	sudo chmod g+w /media/lego/O-ID-HERE/
+
