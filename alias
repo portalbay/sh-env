@@ -9,7 +9,10 @@ function gitgo() {
 	git add . ; git commit -m "$1"; git push	
 }
 
-#export -f 
+function genpass() {
+	openssl rand -base64 44
+}
+
 
 #Public Alias
 alias disk='df -h'
