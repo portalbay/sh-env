@@ -5,6 +5,12 @@ alias pb='vi ~/.env/alias/alias'
 
 alias snap_list_all='sudo snap list --all'
 
+function gitgo() {
+	git add . ; git commit -m "$1"; git push	
+}
+
+#export -f 
+
 #Public Alias
 alias disk='df -h'
 alias _='sudo '
