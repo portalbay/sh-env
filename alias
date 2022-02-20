@@ -13,6 +13,8 @@ function genpass() {
 	openssl rand -base64 44
 }
 
+alias cheatsh='curl cheat.sh/'
+
 alias gits='git status'
 alias gitcl='git config --list --local'
 alias gitcg='git config --list --global'
