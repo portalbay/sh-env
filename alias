@@ -19,6 +19,7 @@ function cheatsh() {
 }
 
 
+alias gitcreds='git config credential.helper store'
 alias gits='git status'
 alias gitcl='git config --list --local'
 alias gitcg='git config --list --global'
@@ -26,6 +27,7 @@ alias glog='git log'
 alias gitl='glog'
 
 #Public Alias
+alias c='clear'
 alias disk='df -h'
 alias _='sudo '
 alias afind='ack -il'
@@ -78,7 +80,7 @@ alias ll='ls --color=auto -ltr'
 alias lsa='ls -lah'
 alias p='/usr/bin/python'
 alias pipi='python -m pip install'
-alias h='history'
+alias h='history | cut -c 8-'
 alias updates='sudo apt update ; sudo apt upgrade -y'
 alias .env='cd ~/.env'
 
