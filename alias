@@ -1,7 +1,7 @@
 
 #Environment profile settings, will need updated if not using bash.
 alias b='vi ~/.bashrc'
-alias pb='vi ~/.env/alias/alias'
+alias pb='vi ~/.env/alias'
 
 alias snap_list_all='sudo snap list --all'
 
@@ -85,6 +85,7 @@ alias .env='cd ~/.env/alias'
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort" 
 alias findmount='findmnt'
 alias list_block='lsblk'
+alias lsblkno='lsblk -e7'
 
 #search history
 alias gh='history|grep' 
