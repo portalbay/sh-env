@@ -13,7 +13,11 @@ function genpass() {
 	openssl rand -base64 44
 }
 
-alias cheatsh='curl cheat.sh/'
+function cheatsh() {
+	get_req="http://cheat.sh/$1"
+	curl "$get_req"
+}
+
 
 alias gits='git status'
 alias gitcl='git config --list --local'
@@ -76,7 +80,7 @@ alias p='/usr/bin/python'
 alias pipi='python -m pip install'
 alias h='history'
 alias updates='sudo apt update ; sudo apt upgrade -y'
-alias .env='cd ~/.env/alias'
+alias .env='cd ~/.env'
 
 
 
