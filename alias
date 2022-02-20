@@ -14,7 +14,8 @@ function genpass() {
 }
 
 alias gits='git status'
-
+alias gitcl='git config --list --local'
+alias gitcg='git config --list --global'
 
 #Public Alias
 alias disk='df -h'
