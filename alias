@@ -17,6 +17,7 @@ alias gits='git status'
 alias gitcl='git config --list --local'
 alias gitcg='git config --list --global'
 alias glog='git log'
+alias gitl='glog'
 
 #Public Alias
 alias disk='df -h'
