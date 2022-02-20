@@ -13,6 +13,8 @@ function genpass() {
 	openssl rand -base64 44
 }
 
+alias gits='git status'
+
 
 #Public Alias
 alias disk='df -h'
