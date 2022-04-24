@@ -20,7 +20,7 @@ function cheatsh() {
 }
 
 function get_hash(){
-	echo "md5sum, sha1sum,  sha224sum,  sha256sum,  sha384sum,  sha512sum"
+	echo "md5sum, sha256sum,  sha384sum,  sha512sum"
 
 }
 
