@@ -9,6 +9,7 @@ function gitgo() {
 	git add . ; git commit -m "$1"; git push	
 }
 
+
 function genpass() {
 	openssl rand -base64 44
 }
@@ -17,6 +18,11 @@ function cheatsh() {
 	get_req="http://cheat.sh/$1"
 	curl "$get_req"
 }
+
+function get_hash(){
+	echo "md5sum, sha256sum,  sha384sum,  sha512sum"
+}
+
 
 alias qhttp='python3 -m http.server'
 
@@ -257,4 +263,5 @@ alias search_dir_text="grep -rnw . -e "
 #Route tweaking
 #   ip route list
 #   sudo ip route del 172.219.0.0/16 dev br-9415c7e1881c
+
 
