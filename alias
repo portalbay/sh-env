@@ -83,7 +83,7 @@ alias pipi='python -m pip install'
 alias h='history | cut -c 8-'
 alias updates='sudo apt update ; sudo apt upgrade -y'
 alias .env='cd ~/.env'
-
+#alias add_pub_key="cat ~/.ssh/id_rsa.pub | ssh user@remote.host 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'"
 
 
 
@@ -110,6 +110,25 @@ alias test_dsk_speed='sudo hdparm -Tt /dev/sda'
 
 #Search directory for string
 alias search_dir_text="grep -rnw . -e "
+
+function add_pub_key(){
+	cat ~/.ssh/id_rsa.pub | ssh $1 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'
+}
+
+function ls_show_extensions(){
+        find . -type f | awk -F. '!a[$NF]++{print $NF}' | paste -s -d, -
+}
+
+function ls_show_extensions_count(){
+        find . -type f | sed -n 's/..*\.//p' | sort | uniq -c | sort -n
+}
+
+#Docker commands
+#
+
+alias dcls='docker container ls'
+alias dils='docker image ls'
+alias home='cd ~'
 
 
 
