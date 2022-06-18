@@ -9,6 +9,7 @@ function gitgo() {
 	git add . ; git commit -m "$1"; git push	
 }
 
+
 function genpass() {
 	openssl rand -base64 44
 }
@@ -18,6 +19,12 @@ function cheatsh() {
 	curl "$get_req"
 }
 
+function get_hash(){
+	echo "md5sum, sha256sum,  sha384sum,  sha512sum"
+}
+
+
+alias qhttp='python3 -m http.server'
 
 alias gitcreds='git config credential.helper store'
 alias gits='git status'
@@ -275,4 +282,5 @@ alias home='cd ~'
 #Route tweaking
 #   ip route list
 #   sudo ip route del 172.219.0.0/16 dev br-9415c7e1881c
+
 
