@@ -91,7 +91,7 @@ alias h='history | cut -c 8-'
 alias updates='sudo apt update ; sudo apt upgrade -y'
 alias .env='cd ~/.env'
 #alias add_pub_key="cat ~/.ssh/id_rsa.pub | ssh user@remote.host 'dd of=.ssh/authorized_keys oflag=append conv=notrunc'"
-
+alias fix-vi-mouse="echo 'set mouse-=a' >> ~/.vimrc"
 
 
 #view only mounted drives 
@@ -282,5 +282,6 @@ alias home='cd ~'
 #Route tweaking
 #   ip route list
 #   sudo ip route del 172.219.0.0/16 dev br-9415c7e1881c
+
 
 
