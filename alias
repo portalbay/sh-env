@@ -5,6 +5,31 @@ alias pb='vi ~/.env/alias'
 
 alias snap_list_all='sudo snap list --all'
 
+function gitinfo()
+{
+	echo $git_user_email
+	echo $git_user_name
+	echo $git_global_token
+}
+
+function gitinit()
+{
+	if [[ -v git_user_name ]]; then git config --global user.name "$git_user_name" ;else echo "git_user_name is missing";return 1;fi
+	if [[ -v git_user_email ]]; then git config --global user.email "$git_user_email";else echo "git_user_name is missing";return 1 ;fi
+	git config --global user.email "$git_user_email"
+   	git config --global user.name "$git_user_name"
+	gitcreds
+	#git init
+
+#if [[ ! -v DEPLOY_ENV ]]; then
+#    echo "DEPLOY_ENV is not set"
+#elif [[ -z "$DEPLOY_ENV" ]]; then
+#    echo "DEPLOY_ENV is set to the empty string"
+#else
+#    echo "DEPLOY_ENV has the value: $DEPLOY_ENV"
+#fi
+}
+
 function gitgo() {
 	git add . ; git commit -m "$1"; git push	
 }
